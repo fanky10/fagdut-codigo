@@ -36,7 +36,9 @@ public class LoginActivity extends AppCompatActivity {
 
         if (usuario.equals("admin") && password.equals("admin")) {
             Toast.makeText(LoginActivity.this, "Login ok", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, BienvenidoActivity.class));
+            Intent i = new Intent(this, BienvenidoActivity.class);
+            i.putExtra(BienvenidoActivity.EXTRA_PARAM_NOMBRE, "Juancito");
+            startActivity(i);
             finish();
         } else if (usuario.equals("android") && password.equals("android")) {
             Toast.makeText(LoginActivity.this, "Bienvenido Android!", Toast.LENGTH_SHORT).show();
