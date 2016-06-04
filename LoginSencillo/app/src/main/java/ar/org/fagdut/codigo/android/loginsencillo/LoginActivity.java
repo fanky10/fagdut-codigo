@@ -1,5 +1,6 @@
 package ar.org.fagdut.codigo.android.loginsencillo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if (usuario.equals("admin") && password.equals("admin")) {
             Toast.makeText(LoginActivity.this, "Login ok", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, BienvenidoActivity.class));
+            finish();
         } else if (usuario.equals("android") && password.equals("android")) {
             Toast.makeText(LoginActivity.this, "Bienvenido Android!", Toast.LENGTH_SHORT).show();
         } else {
