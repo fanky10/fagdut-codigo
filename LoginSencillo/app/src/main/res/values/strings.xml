@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Login Sencillo</string>
+    <string name="login_username_hint">Ingrese Usuario</string>
+    <string name="login_password_hint">Ingrese Password</string>
+    <string name="login_submit">Ingresar</string>
 </resources>

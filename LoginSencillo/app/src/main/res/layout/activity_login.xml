@@ -9,8 +9,37 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ar.org.fagdut.codigo.android.loginsencillo.LoginActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_android_robot"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/imageView">
+        <EditText
+            android:id="@+id/et_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_username_hint"/>
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password_hint"
+            android:inputType="textPassword"
+            android:ems="10"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_submit"/>
+    </LinearLayout>
 </RelativeLayout>
