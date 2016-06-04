@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EjBasicoB</string>
+    <string name="labelList">Seleccione una opcion</string>
 </resources>
