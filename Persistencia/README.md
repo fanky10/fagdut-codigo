@@ -194,3 +194,23 @@ Finalmente ponemos la actividad como MAIN
 ## 3 - Agregar Actividad de Lista.
 
 Se deja al alumno implementar una actividad que muestre la lista de valores y sea disparada por el formulario alta de valor.
+
+Crear Nueva Actividad sin layout
+```java
+public class ListaActivity extends ListActivity {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        BaseDeDatos bdd = new BaseDeDatos(this);
+        bdd.open();
+        List<String> valores = bdd.getValores();
+        bdd.close();
+
+        // Create an ArrayAdapter, that will actually make the Strings above
+        // appear in the ListView
+        this.setListAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, valores.toArray(new String[0])));
+    }
+
+}
+```
+
