@@ -16,13 +16,12 @@ En el archivo activity_main.xml pegar la siguiente estructura de xml que represe
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="ar.org.fagdut.codigo.android.persistencia.MainActivity">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txt_valor_guardado"
@@ -40,8 +39,10 @@ En el archivo activity_main.xml pegar la siguiente estructura de xml que represe
     <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="guardarNuevo"/>
+        android:onClick="guardarNuevo"
+        android:text="Guardar Cambios"/>
 </LinearLayout>
+
 
 ```
 
