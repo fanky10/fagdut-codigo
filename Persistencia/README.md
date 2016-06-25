@@ -150,7 +150,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
 Crear una Actividad nueva que sera la encargada de comunicarse con la bdd
 
-```
+```java
 public class DAOActivity extends AppCompatActivity {
 
     @Override
