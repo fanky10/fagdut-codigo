@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
         String nuevoValor = et.getText().toString();
         preferenciasCompartidas.edit().putString(KEY_PREFERENCIA_VALOR, nuevoValor).commit();
         tvValorGuardado.setText(nuevoValor);
+        et.setText("");
     }
 }
