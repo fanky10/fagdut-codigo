@@ -6,7 +6,7 @@ Crearemos un nuevo proyecto con una actividad vacia:
 
 - Nombre: Persistencia
 
-- Dominio: practica.fagdut.exmample.com
+- Dominio: practica.fagdut.example.com
 
 
 En el archivo activity_main.xml pegar la siguiente estructura de xml que representa un TextView para el valor actual, un EditText para ingresar un nuevo valor y por ultimo un boton para persistir ese mismo valor.
