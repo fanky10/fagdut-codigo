@@ -190,4 +190,6 @@ public class DAOActivity extends AppCompatActivity {
 
 Finalmente ponemos la actividad como MAIN
 
-3 - Se deja al alumno implementar una actividad que muestre la lista de valores y sea disparada por el formulario alta de valor.
+## 3 - Agregar Actividad de Lista.
+
+Se deja al alumno implementar una actividad que muestre la lista de valores y sea disparada por el formulario alta de valor.
