@@ -33,7 +33,7 @@ class FibonacciTask extends AsyncTask<Integer, Void, Integer> {
 
         @Override
         protected Integer doInBackground(Integer... integers) {
-            return fibonacci(integers[0]);
+            return fibonacci(integers[0].intValue());
         }
 
 
