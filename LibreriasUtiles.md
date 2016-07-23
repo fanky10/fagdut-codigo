@@ -5,10 +5,17 @@ En esta unidad repasaremos tres conceptos muy sencillos a la hora de crear una a
 
 ## 1. Comunicación en el Servidor
 
-En cualquier aplicación android que quiera utilizar el recurso de internet, primero debe establecer el permiso para poder hacerlo. El mismo se establece en el *AndroidManifest.xml* de la aplicación dentro del tag **```<manifest>```**
+En cualquier aplicación android que quiera utilizar el recurso de internet, primero debe establecer el permiso para poder hacerlo. El mismo se establece en el *AndroidManifest.xml*
 
 ```xml
+<manifest ...>
+...
+
 <uses-permission android:name="android.permission.INTERNET" />
+
+<application ... />
+...
+</manifest>
 ```
 
 Para la comunicación con el servidor, se puede utilizar la clase Java [HttpClient](https://developer.android.com/reference/org/apache/http/client/HttpClient.html) pero sería muy engorroso tener que manejar todas las Exceptions lanzadas por el cliente solo para construir el objeto correctamente y luego otro conjunto de Exceptions solo para recuperar el contenido linea a lina mediante un [BufferedReader](https://developer.android.com/reference/java/io/BufferedReader.html).
