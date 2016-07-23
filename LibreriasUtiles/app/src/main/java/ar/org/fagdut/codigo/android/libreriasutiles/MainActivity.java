@@ -53,19 +53,24 @@ public class MainActivity extends ListActivity {
   }
 
   private void cargarDatos() {
-    Call<List<RepoModel>> call = gitHubService.listRepos("fanky10");
-    call.enqueue(new Callback<List<RepoModel>>() {
+    Call<List<RepositorioModel>> call = gitHubService.listRepos("fanky10");
+    call.enqueue(new Callback<List<RepositorioModel>>() {
       @Override
-      public void onResponse(Call<List<RepoModel>> call, Response<List<RepoModel>> response) {
-        Log.d(TAG,"on response retrofit "+response.body());
-        Toast.makeText(MainActivity.this, "Cantidad encontrada: "+response.body().size(), Toast.LENGTH_SHORT).show();
+      public void onResponse(Call<List<RepositorioModel>> call, Response<List<RepositorioModel>> response) {
+        actualizaDatos(response.body());
       }
 
       @Override
-      public void onFailure(Call<List<RepoModel>> call, Throwable t) {
+      public void onFailure(Call<List<RepositorioModel>> call, Throwable t) {
         Log.e(TAG,"on failure retrofit "+t.getMessage());
       }
     });
+  }
+  // ejecutado cuando recupera los datos
+  private void actualizaDatos(List<RepositorioModel> repositorios) {
+    Log.d(TAG,"repositorios "+repositorios);
+    Toast.makeText(MainActivity.this, "Cantidad encontrada: "+repositorios.size(), Toast.LENGTH_SHORT).show();
+    setListAdapter(new RepositoriosAdapter(this, repositorios));
   }
 
   @Override
@@ -81,22 +86,8 @@ public class MainActivity extends ListActivity {
   // Retrofit service impl. puede ser movido a otras respectivas clases
 
   public interface GitHubService {
-    @GET("users/{user}/repos") Call<List<RepoModel>> listRepos(@Path("user") String user);
+    @GET("users/{user}/repos") Call<List<RepositorioModel>> listRepos(@Path("user") String user);
   }
 
-  public class RepoModel {
-    @SerializedName("name")
-    String mNombre;
-
-    @SerializedName("private")
-    Boolean mEsPrivado;
-
-    @SerializedName("description")
-    String mDescripcion;
-
-    public String toString() {
-      return String.format("nombre: %s / privado: %s / desc: %s", mNombre, mEsPrivado, mDescripcion);
-    }
-  }
 
 }
