@@ -5,7 +5,7 @@ En esta unidad repasaremos tres conceptos muy sencillos a la hora de crear una a
 
 ## 1. Comunicación en el Servidor
 
-En cualquier aplicación android que quiera utilizar el recurso de internet, primero debe establecer el permiso para poder hacerlo, mediante el codigo:
+En cualquier aplicación android que quiera utilizar el recurso de internet, primero debe establecer el permiso para poder hacerlo. El mismo se establece en el *AndroidManifest.xml* de la aplicación dentro del tag **```<manifest>```**
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
