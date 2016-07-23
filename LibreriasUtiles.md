@@ -214,5 +214,3 @@ public class Repositorio {
     }
 }
 ```
-
-## 3. Carga de Imágenes
