@@ -3,6 +3,24 @@
 Hay pocas aplicaciones android que no utilicen algún tipo de comunicación con un servidor externo, ya sea para visualizar la actividad del usuario o simplemente enviar errores de la aplicación cuando esta falla.
 En esta unidad repasaremos tres conceptos muy sencillos a la hora de crear una aplicación que persiste datos con un servidor externo.
 
+Las mismas se pueden agregar de diversas formas, pero la más común es simplemente modificando el build.gradle del módulo app:
+
+```gradle
+apply plugin: "..."
+
+android { ... }
+
+dependencies {
+  // otras dependencias del proyecto como puede ser:
+  
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:24.0.0'
+  
+  // mas dependencias
+  ...
+}
+```
+
 ## 1. Comunicación en el Servidor
 
 En cualquier aplicación android que quiera utilizar el recurso de internet, primero debe establecer el permiso para poder hacerlo. El mismo se establece en el *AndroidManifest.xml*
