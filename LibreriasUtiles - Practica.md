@@ -42,6 +42,12 @@ public class Repositorio {
 }
 ```
 
+## Agregar recurso String
+
+```xml
+<string name="github_base_url">https://api.github.com/</string>
+```
+
 ## Modificando MainActivity
 
 Agregar el siguiente codigo a MainActivity.
