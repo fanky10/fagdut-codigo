@@ -86,16 +86,17 @@ public class MainActivity extends ListActivity {
 
   public class RepoModel {
     @SerializedName("name")
-    @Expose
-    String mName;
+    String mNombre;
 
     @SerializedName("private")
-    @Expose
-    Boolean mPrivate;
+    Boolean mEsPrivado;
 
     @SerializedName("description")
-    @Expose
-    String mDescription;
+    String mDescripcion;
+
+    public String toString() {
+      return String.format("nombre: %s / privado: %s / desc: %s", mNombre, mEsPrivado, mDescripcion);
+    }
   }
 
 }
