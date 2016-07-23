@@ -89,6 +89,12 @@ Agregar el siguiente codigo a MainActivity.
     Log.d(TAG,"repositorios "+repositorios);
     Toast.makeText(MainActivity.this, "Cantidad encontrada: "+repositorios.size(), Toast.LENGTH_SHORT).show();
   }
+  
+  // clase de servicio
+  public interface GitHubService {
+    @GET("users/{user}/repos")
+    Call<List<RepositorioModel>> listRepos(@Path("user") String user);
+  }
 ```
 
 Se deja al alumno que agregue un layout correspondiente y ejecute el metodo: cargarDatos() mediante un elemento UI como puede ser un botón.
