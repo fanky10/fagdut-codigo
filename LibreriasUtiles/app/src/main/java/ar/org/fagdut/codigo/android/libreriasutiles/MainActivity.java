@@ -2,6 +2,7 @@ package ar.org.fagdut.codigo.android.libreriasutiles;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -77,17 +78,41 @@ public class MainActivity extends ListActivity {
   protected void onListItemClick(ListView l, View v, int position, long id) {
     super.onListItemClick(l, v, position, id);
     // Get the item that was clicked
-    Object o = this.getListAdapter().getItem(position);
-    String keyword = o.toString();
-    Toast.makeText(this, "Has Seleccionado " + keyword, Toast.LENGTH_LONG)
-        .show();
+    RepositorioModel model = (RepositorioModel) this.getListAdapter().getItem(position);
+    buscarBranches(model.mNombre);
   }
+
+
+
+  private void buscarBranches(String repositorio) {
+    Call<List<BranchModel>> call = gitHubService.listBranches("fanky10", repositorio);
+    call.enqueue(new Callback<List<BranchModel>>() {
+      @Override
+      public void onResponse(Call<List<BranchModel>> call, Response<List<BranchModel>> response) {
+        mostrarBranches(response.body());
+      }
+
+      @Override
+      public void onFailure(Call<List<BranchModel>> call, Throwable t) {
+        Log.e(TAG,"on failure retrofit "+t.getMessage());
+      }
+    });
+  }
+
+  private void mostrarBranches(List<BranchModel> branches) {
+    // Use the Builder class for convenient dialog construction
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setMessage("Branches: "+branches);
+    // Create the AlertDialog object and return it
+    builder.create().show();
+  }
+
 
   // Retrofit service impl. puede ser movido a otras respectivas clases
 
   public interface GitHubService {
     @GET("users/{user}/repos") Call<List<RepositorioModel>> listRepos(@Path("user") String user);
+    @GET("repos/{user}/{repos}/branches")
+    Call<List<BranchModel>> listBranches(@Path("user") String user, @Path("repos") String repos);
   }
-
-
 }
