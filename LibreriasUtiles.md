@@ -1,7 +1,7 @@
 # Librerías Útiles en un proyecto Android
 
 Hay pocas aplicaciones android que no utilicen algún tipo de comunicación con un servidor externo, ya sea para visualizar la actividad del usuario o simplemente enviar errores de la aplicación cuando esta falla.
-En esta unidad repasaremos tres conceptos muy sencillos a la hora de crear una aplicación que persiste datos con un servidor externo.
+En esta unidad repasaremos algunos conceptos muy sencillos a la hora de crear una aplicación que recupera datos con un servidor externo.
 
 Las mismas se pueden agregar de diversas formas, pero la más común es simplemente modificando el build.gradle del módulo app:
 
@@ -214,5 +214,3 @@ public class Repositorio {
     }
 }
 ```
-
-## 3. Carga de Imágenes
