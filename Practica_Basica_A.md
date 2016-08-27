@@ -12,7 +12,7 @@ tón. En el camino, iremos descubriendo nuevas vistas, además de nuevas propi
 
 ### B. Implementación
 - Comenzaremos este ejercicio creando un nuevo proyecto Android desde Android Studio.
-- Le asignamos un nombre: EjercicioBasicoB
+- Le asignamos un nombre: EjercicioBasicoA
 - Dominio: android.fagdut.org.ar
 - Localizamos el proyecto en el disco C:\
 - Seleccionamos: Minimun Target SDK: 16
@@ -21,41 +21,92 @@ tón. En el camino, iremos descubriendo nuevas vistas, además de nuevas propi
 
 ### B.1 Primer layout
 
+Formulario sencillo con validacion:
+
 Vamos a comenzar editando el archivo de layout, el activity_main.xml. 
 En él tendremos ya la estructura creada por defecto, en la que destaca un TextView con un texto.
-Comenzaremos a trabajar añadiendo Views y ViewGroups bajo éste. Lo que queremos hacer es un clásico checkbox para habilitar o no un ViewGroup, donde guardaremos una vist
-a. Debido a que también queremos practicar los eventos de las Views, necesitamos también un TextView que acompañe al ya mencionado checkbox.
 
-El código XML para poder añadir un CheckBox seguido de un TextView (main.xml) es el siguiente:
+Modificaremos el xml para obtener una estructura como la siguiente:
+Donde mostraremos un texto informativo, un campo de ingreso de datos y un boton.
+
 ```xml
-<?xml version="1.0" encoding="utf-8"?> 
-<LinearLayout
- xmlns:android="http://schemas.android.com/apk/res/android" 
- android:orientation="vertical"
- android:layout_width="fill_parent"
- android:layout_height="fill_parent">
-  <TextView 
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/hello">
-  </TextView>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ar.org.fagdut.android.ejerciciobasicoa.MainActivity"
+    android:orientation="vertical">
 
-  <CheckBox
-    android:id="@+id/enableViews"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/enableViews"
-    android:checked="false">
-  </CheckBox>
-  <TextView
-    android:id="@+id/eventsTextView"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:maxLines="2"
-    android:minLines="2">
-  </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese un numero"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+    <EditText
+        android:id="@+id/txtIngreso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"/>
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"/>
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Numero invalido"
+        android:visibility="gone"/>
 </LinearLayout>
 ```
 
+Luego agregaremos el codigo Java:
 
+Guardamos las referencias de las vistas:
 
+```java
+        btnAceptar = (Button) findViewById(R.id.btnAceptar);
+        txtIngreso = (TextView) findViewById(R.id.txtIngreso);
+        txtError = (TextView) findViewById(R.id.txtError);
+
+```
+Agregamos un metodo de validacion:
+
+```java
+private boolean esNumero(String text) {
+     boolean isValid = false;
+     try{
+         int number = Integer.parseInt(text);
+         isValid = true;
+     }catch (NumberFormatException nfe) {
+
+     }
+     return isValid;
+ }
+```
+
+Finalmente hacemos el binding del boton aceptar:
+
+```java
+btnAceptar.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+         aceptar();
+     }
+ });
+ 
+ public void aceptar() {
+     boolean esNumero = esNumero(txtIngreso.getText().toString());
+     if (esNumero) {
+         txtError.setVisibility(View.GONE);
+     } else {
+         txtError.setVisibility(View.VISIBLE);
+     }
+ }
+```
