@@ -58,7 +58,7 @@ Modificamos el metodo: lanzarActividad, de tal forma que el parametro enviado se
 ```java
 private void lanzarActividad() {
     EditText txtParametroActividad = (EditText) findViewById(R.id.txt_parametro_actividad);
-    String texto = txtParametroActividad.getText().toString;
+    String texto = txtParametroActividad.getText().toString();
     Intent intento = new Intent(this, ResultadoActivity.class);
     // par clave valor
     intento.putExtra("textoActividad",texto);
