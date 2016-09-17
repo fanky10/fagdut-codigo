@@ -49,4 +49,20 @@ TextView txtTextoActividad = (TextView) findViewById(R.id.txt_texto_actividad);
 txtTextoActividad.setText(textoActividad);
 ```
 
-## 1.1 Modificando esos parametros
+## 1.2 Obtener texto ingresado del usuario
+
+### MainActivity
+
+Modificamos el metodo: lanzarActividad, de tal forma que el parametro enviado sea lo que ingrese el usuario.
+
+```java
+private void lanzarActividad() {
+    TextView txtParametroActividad = (TextView) findViewById(R.id.txt_parametro_actividad);
+    String texto = txtParametroActividad.getText();
+    Intent intento = new Intent(this, ResultadoActivity.class);
+    // par clave valor
+    intento.putExtra("textoActividad",texto);
+    startActivity(intento);
+}
+
+```
