@@ -6,7 +6,7 @@ El alumno se familiarizará con los cambios de actividades, agregar funciones a 
 
 ## Precondiciones
 
-- Crear una actividad MainActivity con un Button con android:id="@+id/btn_lanzar_actividad" y un EditTextView con android:id="@+id/txt_parametro_actividad"
+- Crear una actividad MainActivity con un Button con android:id="@+id/btn_lanzar_actividad" y un EditText con android:id="@+id/txt_parametro_actividad"
 - Crear una segunda actividad ResultadoActivity con un TextView con android:id="@+id/txt_texto_actividad"
 
 ## 1.1 Lanzando una actividad con parametros
