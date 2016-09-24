@@ -82,12 +82,14 @@ lstOpciones.setOnItemClickListener(new OnItemClickListener() {
 
 # Escuchando el cambio de la lista de opciones
 
+Con una nueva estructura de datos, un mapa de clave, valor con la lista de equipos y de clave la marca. Escuchamos la lista de opciones y mantenemos un elemento seleccionado para saber que lista renderizar.
+
 ## Modificamos la estructura de datos y escuchamos la seleccion
 
 ### 1. Agregamos una estructura de datos del tipo mapa y el seleccionado
 
 ```java
-public class MainActivity extends AppCompatActivity {
+// class
     private Map<String,String[]> mTelefonosMap;
     private String marcaSeleccionada;
 
