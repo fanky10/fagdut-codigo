@@ -56,9 +56,9 @@ listview.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener(){
 
 # Pasos a seguir
 
-## 1. Crear un nuevo Proyecto con nombre Ejercicio0301
+### 1. Crear un nuevo Proyecto con nombre Ejercicio0301
 
-## 2. Agregar la vista ListView a la interfaz de usuario:
+### 2. Agregar la vista ListView a la interfaz de usuario:
 
 ```xml
 <ListView android:id="@+id/ListOpciones"
@@ -66,7 +66,7 @@ listview.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener(){
     android:layout_height="match_parent"/>
 ```
     
-## 3. Definir un array con nuestros datos de prueba:
+### 3. Definir un array con nuestros datos de prueba:
 
 ```java
 finalString[] datos = new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
