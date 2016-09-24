@@ -43,7 +43,7 @@ Implementando un adaptador en la vista *ListView*.
 <ListView
     android:id="@+id/LstOpciones"
     android:layout_width="match_parent"
-    android:layout_height="match_patent"/>
+    android:layout_height="match_parent"/>
 ```
 
 ## Utilizacion en una Activity (JAVA)
