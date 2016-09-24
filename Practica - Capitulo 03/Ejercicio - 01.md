@@ -53,3 +53,43 @@ listview.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener(){
     } 
 });
 ```
+
+# Pasos a seguir
+
+## 1. Crear un nuevo Proyecto con nombre Ejercicio0301
+
+## 2. Agregar la vista ListView a la interfaz de usuario:
+
+```xml
+<ListView android:id="@+id/ListOpciones"
+￼￼    android:layout_width="match_parent" 
+    android:layout_height="match_parent"/>
+```
+    
+## 3. Definir un array con nuestros datos de prueba:
+
+```java
+finalString[] datos = new String[]{"Elem1","Elem2","Elem3","Elem4","Elem5"};
+```
+
+### 4. Crear el adaptador de tipo ArrayAdapter y lo asignamos al control mediante el metodo *setAdapter();*
+
+```java
+final ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos);
+ListView lstOpciones = (ListView)findViewById(R.id.ListOpciones); 
+lstOpciones.setAdapter(adaptador);
+```
+
+### 5. Detectar una pulsación sobre el *ListView*, sobre un elemento de la lista creada tendremos que
+implementar el evento *onItemClick*.
+
+```java
+lstOpciones.setOnItemClickListener(newOnItemClickListener() {
+    @Override
+    publicvoidonItemClick(AdapterView<?> a, View v, intpos, longid) {
+        //Acciones necesarias al hacer click
+        String keyword = adaptador.getItem(pos).toString(); 
+        Toast.makeText(getApplicationContext(),”You Selected: ” + keyword, Toast.LENGTH_LONG).show();
+    } 
+});
+```
