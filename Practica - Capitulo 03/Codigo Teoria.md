@@ -82,11 +82,14 @@ lstOpciones.setOnItemClickListener(new OnItemClickListener() {
 
 # Escuchando el cambio de la lista de opciones
 
-### 1. Agregamos un escuchador
+## Modificamos la estructura de datos y escuchamos la seleccion
+
+### 1. Agregamos una estructura de datos del tipo mapa y el seleccionado
 
 ```java
-
+public class MainActivity extends AppCompatActivity {
     private Map<String,String[]> mTelefonosMap;
+    private String marcaSeleccionada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +106,18 @@ lstOpciones.setOnItemClickListener(new OnItemClickListener() {
         mTelefonosMap.put("Sony", new String[]{
                 "Xperia M4 Aqua", "Xperia M5"
         });
+        marcaSeleccionada = "Motorola";
 
 
-        initOpciones();
-        initList("Motorola");
+        adaptadorOpciones();
+        adaptadorLista();
     }
+```
 
-    private void initOpciones() {
+### 2. Modificamos el metodo de adaptador de opciones
+
+```java
+    private void adaptadorOpciones() {
         final String[] datos = new String[]{"Motorola", "Samsung", "Sony"};
         final ArrayAdapter<String> adaptador =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
         final Spinner cmbOpciones = (Spinner)findViewById(R.id.CmbOpciones);
@@ -119,7 +127,8 @@ lstOpciones.setOnItemClickListener(new OnItemClickListener() {
         cmbOpciones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                initList(datos[i]);
+                marcaSeleccionada = datos[i];
+                adaptadorLista();
             }
 
             @Override
@@ -128,11 +137,14 @@ lstOpciones.setOnItemClickListener(new OnItemClickListener() {
             }
         });
     }
+```
 
-    private void initList(String marca) {
-        final String[] datos = mTelefonosMap.get(marca);
+### 3. Luego el metodo donde se adapta la lista.
 
-        // prestar especial atencion en el layout provisto por android para list views:
+```java
+    private void adaptadorLista() {
+        final String[] datos = mTelefonosMap.get(marcaSeleccionada);
+
         ArrayAdapter<String> adaptador =new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos);
         ListView lstOpciones = (ListView)findViewById(R.id.LstOpciones);
         lstOpciones.setAdapter(adaptador);
