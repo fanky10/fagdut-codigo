@@ -2,11 +2,11 @@
 
 ListViews - Mostrar un array en un ListView y selección de elementos
 
-# Descripción
+## Descripción
 
 El ejercicio consistirá en mostrar un array de String en un ListView, y obtener la selección de un elemento de la lista, mostrando el elemento seleccionado.
 
-# Implementación
+## Implementación
 
 Un *adapter* (Adaptador) enlaza los datos con las vistas. Él es el responsable de crear vistas hijas para cada uno de los ítems y proporciona acceso al dato que se mostrará.
 
@@ -54,7 +54,7 @@ listview.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener(){
 });
 ```
 
-# Pasos a seguir
+## Pasos a seguir
 
 ### 1. Crear un nuevo Proyecto con nombre Ejercicio0301
 
