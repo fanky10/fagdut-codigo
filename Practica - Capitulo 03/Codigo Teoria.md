@@ -150,5 +150,12 @@ Con una nueva estructura de datos, un mapa de clave, valor con la lista de equip
         ArrayAdapter<String> adaptador =new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos);
         ListView lstOpciones = (ListView)findViewById(R.id.LstOpciones);
         lstOpciones.setAdapter(adaptador);
+        
+        lstOpciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this, "Item seleccionado" + adaptador.getItem(i), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 ```
