@@ -96,3 +96,26 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajeModel> {
 }
 
 ```
+
+### 7. Finalmente asociar los datos.
+
+```java
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // obtenemos el elemento de la posicion
+        PersonajeModel personaje = getItem(position);
+
+        // verificamos si hay una vista que esta siendo reusada, sino inflamos una nueva.
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.personaje_item, parent, false);
+        }
+
+        // buscamos el elemento que queremos manipular sobre la vista raiz
+        TextView txtNombre = (TextView) convertView.findViewById(R.id.textView);
+        // utilizamos el metodo ya conocido
+        txtNombre.setText(personaje.mNombre);
+
+        // retornamos la vista raiz ya manipulada
+        return convertView;
+    }
+```
