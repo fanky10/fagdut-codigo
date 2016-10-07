@@ -18,7 +18,7 @@ Utilizaremos un adaptador propio para poder adaptar el modelo de datos existente
 
 ```xml
 <ListView android:id="@+id/listView"
-￼￼    android:layout_width="match_parent" 
+    android:layout_width="match_parent" 
     android:layout_height="match_parent"/>
 ```
     
