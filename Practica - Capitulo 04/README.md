@@ -110,8 +110,8 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
 // si no hay base de datos anterior, entonces se crea
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(SQL_CREATE_TABLE);
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(SQL_CREATE_TABLE);
     }
 
 // si cambia la version entonces se ejecuta un clean y la recreacion de datos.
@@ -123,7 +123,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS valores");
 
         // recreate tables.
-        db.execSQL(SQL_CREATE_TABLE);
+        onCreate(db);
     }
 // guardamos un registro sencillo mediante el objeto content values
     public void guardar(String valor) {
