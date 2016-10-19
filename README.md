@@ -1,2 +1,2 @@
 # fagdut-codigo
-Los distintos fragmentos de codigo que utilizaremos en el curso de Fagdut 
+Los distintos fragmentos de código que utilizaremos en el curso Android del instituto Fagdut 
