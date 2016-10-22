@@ -4,7 +4,7 @@ Tareas Async
 
 ## Descripción
 
-Este ejercicio consistirá en mostrar un calculo pesado (el numero de Fibonacci) primero de forma sincrona y luego de forma async.
+Este ejercicio consistirá en mostrar un calculo pesado (el numero de Fibonacci) de forma sincrona para que veamos como afecta la mala utilización del hilo UI a la experiencia de usuario.
 
 ## Implementación
 
@@ -72,12 +72,14 @@ La funcion a utilizar para calcular el numero de Fibonacci:
 
 ```java
 // MainActivity.java
+
     // onCreate no tiene cambios
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     // agregamos el calculo de forma sincrona
     public void calcular(View v) {
         EditText etEntrada = (EditText) findViewById(R.id.et_entrada);
@@ -87,6 +89,7 @@ La funcion a utilizar para calcular el numero de Fibonacci:
         int resultado = fibonacci(numero);
         txtResultado.setText("Resultado: " + resultado);
     }
+
     // funcion de calculo
     int fibonacci(int n) {
         if (n == 0 || n == 1) return n;
