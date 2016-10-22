@@ -22,7 +22,7 @@ Fibonacci de forma secuencial o sincrónica
 
 ## 1.1 - Fibonacci Async
 
-Creamos la clase dentro de la actividad:
+Creamos la clase dentro de la actividad (InnerClass)
 ```java
 class FibonacciTask extends AsyncTask<Integer, Void, Integer> {
 
@@ -41,15 +41,5 @@ class FibonacciTask extends AsyncTask<Integer, Void, Integer> {
             Toast.makeText(MainActivity.this, "Resultado: "+result, Toast.LENGTH_SHORT).show();
         }
     }
-}
-```
-
-Modificamos el metodo calcular:
-
-```java
-public void calcular(View v) {
-        EditText etEntrada = (EditText) findViewById(R.id.et_entrada);
-        int number = Integer.parseInt(etEntrada.getText().toString());
-        new FibonacciTask().execute(number);
 }
 ```
