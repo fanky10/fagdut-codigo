@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
 
 public class DetailActivity extends AppCompatActivity {
@@ -22,11 +23,9 @@ public class DetailActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra(CHARACTER_NAME_PARAM)) {
             String nameSearch = getIntent().getStringExtra(CHARACTER_NAME_PARAM);
-            for (String data: CharactersStaticRepository.getData()) {
-                if (data.toLowerCase().contains(nameSearch)) {
-                    nameFound = data;
-                    break;
-                }
+            CharacterModel characterModel = CharactersStaticRepository.findOne(nameSearch);
+            if (characterModel != null) {
+                nameFound = characterModel.getName();
             }
         }
 
