@@ -26,7 +26,7 @@ dependencies {
 ## Crear Modelo de aplicación
 
 ```java
-public class Repositorio {
+public class RepositorioModel {
     @SerializedName("name")
     String mNombre;
 
