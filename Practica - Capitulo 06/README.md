@@ -76,7 +76,7 @@ Agregar el siguiente codigo a MainActivity.
     gitHubService =  retrofit.create(GitHubService.class);
   }
   
-  private void cargarDatos() {
+  private void cargarDatos(View v) {
     Call<List<RepositorioModel>> call = gitHubService.listRepos("fanky10");
     call.enqueue(new Callback<List<RepositorioModel>>() {
       @Override
