@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ejercicio_Base</string>
-    <string name="home_intro_message">Buscar Personaje</string>
-    <string name="home_btn_detail">Buscar</string>
+    <string name="search_message">Buscar Personaje</string>
+    <string name="search_btn">Buscar</string>
     <string name="character_not_found">No encontrado</string>
+    <string name="search">Search</string>
 </resources>
