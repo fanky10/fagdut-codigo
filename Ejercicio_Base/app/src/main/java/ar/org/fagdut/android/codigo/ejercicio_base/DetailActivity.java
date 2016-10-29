@@ -1,5 +1,7 @@
 package ar.org.fagdut.android.codigo.ejercicio_base;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -10,6 +12,12 @@ import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticReposito
 public class DetailActivity extends AppCompatActivity {
 
     public static final String CHARACTER_NAME_PARAM = "characterNameParam";
+
+    public static Intent getIntent(Context ctx, String search) {
+        Intent intent = new Intent(ctx, DetailActivity.class);
+        intent.putExtra(DetailActivity.CHARACTER_NAME_PARAM, search);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

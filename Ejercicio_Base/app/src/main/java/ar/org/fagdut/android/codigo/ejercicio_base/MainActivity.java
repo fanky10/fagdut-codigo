@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
@@ -17,11 +19,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
+    }
+
+    private void init() {
         ListView listView = (ListView) findViewById(R.id.listView);
         CharacterModel[] charactersList = CharactersStaticRepository.findAll();
-        CharactersAdapter charactersAdapter = new CharactersAdapter(this, charactersList);
+        final CharactersAdapter charactersAdapter = new CharactersAdapter(this, charactersList);
 
         listView.setAdapter(charactersAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                goToDetail(charactersAdapter.getItem(i));
+            }
+        });
+    }
+
+    private void goToDetail(CharacterModel characterModel) {
+        String search = characterModel.getName();
+        startActivity(DetailActivity.getIntent(this, search));
     }
 
     @Override
