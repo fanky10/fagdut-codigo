@@ -81,7 +81,7 @@ Agregar el siguiente codigo a MainActivity.
     call.enqueue(new Callback<List<RepositorioModel>>() {
       @Override
       public void onResponse(Call<List<RepositorioModel>> call, Response<List<RepositorioModel>> response) {
-        actualizaDatos(response.body());
+        mostrarDatos(response.body());
       }
 
       @Override
@@ -92,7 +92,7 @@ Agregar el siguiente codigo a MainActivity.
   }
   
   // ejecutado cuando recupera los datos
-  private void actualizaDatos(List<RepositorioModel> repositorios) {
+  private void mostrarDatos(List<RepositorioModel> repositorios) {
     Log.d(TAG,"repositorios "+repositorios);
     Toast.makeText(MainActivity.this, "Cantidad encontrada: "+repositorios.size(), Toast.LENGTH_SHORT).show();
   }
