@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Ejercicio_Base</string>
-    <string name="home_intro_message">Ir a Detalle de personaje</string>
-    <string name="home_btn_detail">Lanzar Detalle</string>
+    <string name="home_intro_message">Busqueda de personajes</string>
+    <string name="home_btn_message">Nueva Busqueda</string>
+    <string name="search_activity_title">Busqueda</string>
+    <string name="search_message">Ingrese nombre de Personaje</string>
+    <string name="search_btn">Buscar</string>
 </resources>
