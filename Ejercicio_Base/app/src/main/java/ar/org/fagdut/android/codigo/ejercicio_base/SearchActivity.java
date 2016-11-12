@@ -23,6 +23,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void clickSearch(View v) {
+        // if the search method is too big to be handled in the UI Thread
+        // move it to a different Worker Thread.
         String inputText = txtName.getText().toString();
         String[] names = CharactersStaticRepository.getData();
 
