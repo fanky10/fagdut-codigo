@@ -11,4 +11,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ar.org.fagdut.android.codigo.ejercicio_base.MainActivity"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/home_intro_message"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/home_btn_message"
+        android:onClick="goToSearch"/>
 </LinearLayout>
