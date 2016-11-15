@@ -1,6 +1,6 @@
 # Distribuir la aplicación
 
-## Firmando la aplicación:
+## Firmando la aplicación en modo release:
 Se puede utilizar Android Studio para manualmente generar APK's firmadas.
 En la bar de menu ir a: Build > Generate Signed APK.
 Seleccionar el modulo de aplicación:
