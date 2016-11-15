@@ -17,3 +17,4 @@ Key
 Certificate: Ingresar información sobre vos para el certificado. Esta informacion no esta mostrada en la aplicación, pero es incluido en el certificado como parte del APK.
 
 Imagen:
+[[res/Nueva_Keystore.png|align=center]]
