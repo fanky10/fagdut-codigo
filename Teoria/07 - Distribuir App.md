@@ -41,3 +41,9 @@ En la siguiente pantalla, podremos seleccionar donde se guardara el apk generado
 ![Build Release](res/Build_Release.png)
 
 Finalmente le damos click a "Finish" y tenemos un APK firmado correctamente y del tipo de compilación es: *Release*
+
+
+## Distribuir la aplicación generada:
+Una vez generado el apk se puede distribuir simplemente enviando el mismo como adjunto en un email o mediante dropbox.
+
+### Publicando la app en Playstore
