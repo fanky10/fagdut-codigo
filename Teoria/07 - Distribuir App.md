@@ -2,10 +2,14 @@
 
 ## Firmando la aplicación en modo release:
 Se puede utilizar Android Studio para manualmente generar APK's firmadas.
-En la bar de menu ir a: Build > Generate Signed APK.
-Seleccionar el modulo de aplicación:
 
-1 - Crear un Keystore
+### 1 - En la barra de menu ir a: Build > Generate Signed APK.
+### 2 - Seleccionar el modulo de aplicación: app
+Le aparecerá un cartel como el siguiente:
+![Generate Signed APK](res/Nueva_SignedAPK.png)
+Si ya se tiene un keystore entonces saltar el paso siguiente. Sino darle click al boton: "Create New..."
+
+### 3 - Crear un Keystore
 
 Key store path: Donde se creará el archivo llave.
 Password: Crear y confirmar password para el keystore.
@@ -17,4 +21,4 @@ Key
 Certificate: Ingresar información sobre vos para el certificado. Esta informacion no esta mostrada en la aplicación, pero es incluido en el certificado como parte del APK.
 
 Imagen:
-[[res/Nueva_Keystore.png|align=center]]
+![Nueva Keystore](res/Nueva_Keystore.png)
