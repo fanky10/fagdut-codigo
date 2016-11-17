@@ -83,4 +83,7 @@ Registro de una cuenta "Publisher"
 4. Pagar 25usd para la registración mediante Google Payments. De no tener una cuenta Google Payments, se puede crear una con mucha facilidad.
 5. Cuando el registro esta verificado, serás notificado mediante un email a la dirección de correo electrónico ingresado con anterioridad.
 
+### Consola del Desarrollador
 
+Próximamente:
+https://developer.android.com/distribute/googleplay/developer-console.html
