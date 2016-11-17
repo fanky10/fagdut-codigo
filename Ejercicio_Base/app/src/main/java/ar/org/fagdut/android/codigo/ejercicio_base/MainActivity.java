@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void goToDetail(View v) {
-        Intent intent = new Intent(this, DetailActivity.class);
+    public void goToSearch(View v) {
+        Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
 }

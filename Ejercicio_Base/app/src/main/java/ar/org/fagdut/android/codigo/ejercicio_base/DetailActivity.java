@@ -1,12 +1,12 @@
 package ar.org.fagdut.android.codigo.ejercicio_base;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
-
 public class DetailActivity extends AppCompatActivity {
+
+    public static final String CHARACTER_NAME_KEY = "characterNameKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +16,11 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        String characterName = CharactersStaticRepository.getData()[0];//find the first one
+        String statusMessage = "Nombre no encontrado";
+        if (getIntent() != null && getIntent().hasExtra(CHARACTER_NAME_KEY)) {
+            statusMessage = "Nombre encontrado: "+getIntent().getStringExtra(CHARACTER_NAME_KEY);
+        }
         TextView txtCharacterName = (TextView) findViewById(R.id.txt_character_name);
-        txtCharacterName.setText(characterName);
+        txtCharacterName.setText(statusMessage);
     }
 }
