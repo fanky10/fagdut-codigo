@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
-
 public class DetailActivity extends AppCompatActivity {
 
     public static final String CHARACTER_NAME_KEY = "characterNameKey";
