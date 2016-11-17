@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.List;
+
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         ListView listView = (ListView) findViewById(R.id.listView);
-        CharacterModel[] charactersList = CharactersStaticRepository.findAll();
+        List<CharacterModel> charactersList = new CharactersStaticRepository(this).findAll();
         final CharactersAdapter charactersAdapter = new CharactersAdapter(this, charactersList);
 
         listView.setAdapter(charactersAdapter);

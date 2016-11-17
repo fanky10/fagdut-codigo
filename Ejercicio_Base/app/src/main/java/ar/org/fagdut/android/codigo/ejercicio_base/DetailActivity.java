@@ -31,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra(CHARACTER_NAME_PARAM)) {
             String nameSearch = getIntent().getStringExtra(CHARACTER_NAME_PARAM);
-            CharacterModel characterModel = CharactersStaticRepository.findOne(nameSearch);
+            CharacterModel characterModel = new CharactersStaticRepository(this).findByName(nameSearch);
             if (characterModel != null) {
                 nameFound = characterModel.getName();
             }

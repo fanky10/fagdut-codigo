@@ -9,10 +9,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
 
 public class CharactersAdapter extends ArrayAdapter<CharacterModel> {
-    public CharactersAdapter(Context context, CharacterModel[] objects) {
+
+    public CharactersAdapter(Context context, List<CharacterModel> objects) {
         super(context, 0, objects);
     }
 
