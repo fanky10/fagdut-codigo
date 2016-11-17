@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView listView = (ListView) findViewById(R.id.listView);
-        String[] charactersList = CharactersStaticRepository.getData();
+        CharacterModel[] charactersList = CharactersStaticRepository.findAll();
         CharactersAdapter charactersAdapter = new CharactersAdapter(this, charactersList);
 
         listView.setAdapter(charactersAdapter);
