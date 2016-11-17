@@ -1,23 +1,35 @@
 # Distribuir la aplicación
 
+Para distribuir una aplicación primero hay que firmarla digitalmente con un tipo de compilación (normalmente release) y luego distribuirla de forma manual o mediante el Playstore.
+
 ## Firmando la aplicación en modo release:
+
 Se puede utilizar Android Studio para manualmente generar APK's firmadas.
 
+
 ### 1 - En la barra de menu ir a: Build > Generate Signed APK.
+
 ![Select Module](res/NavBar_BuildSignedAPK.png)
 
 
 ### 2 - Seleccionar el modulo de aplicación.
+
 Normalmente solo aparece uno: app
 ![Select Module](res/Select_App.png)
 
+
 ### 3 - Configurando el build
+
 Al darle aceptar Le aparecerá un cartel como el siguiente:
 ![Generate Signed APK](res/Nueva_SignedAPK.png)
 
-Si ya se tiene un keystore entonces saltar el paso siguiente. Sino darle click al boton: "Create New..."
+Si ya se tiene un keystore entonces saltar el paso siguiente.
+
 
 ### 4 - Crear un Keystore
+
+En la pantalla de generación de APK, darle click al boton: "Create New..." donde veremos una pantalla como la siguiente:
+![Nueva Keystore](res/Nueva_Keystore.png)
 
 Key store path: Donde se creará el archivo llave.
 Password: Crear y confirmar password para el keystore.
@@ -28,8 +40,6 @@ Key
 - Validity (years): Es la longitud en años que la llave debe ser valida. Esta longitud debe ser al menos de 25 años, de esta forma, se puden firmar las actualizaciones con la misma llave para el largo de toda la vida la app.
 Certificate: Ingresar información sobre vos para el certificado. Esta informacion no esta mostrada en la aplicación, pero es incluido en el certificado como parte del APK.
 
-Imagen:
-![Nueva Keystore](res/Nueva_Keystore.png)
 
 ### 5 - Utilizando el keystore para firmar el APK
 
@@ -44,6 +54,13 @@ Finalmente le damos click a "Finish" y tenemos un APK firmado correctamente y de
 
 
 ## Distribuir la aplicación generada:
-Una vez generado el apk se puede distribuir simplemente enviando el mismo como adjunto en un email o mediante dropbox.
+Una vez generado el apk se puede distribuir de forma manual o mediante el Playstore.
+
+### Liberando la aplicación de forma manual: Email
+La forma mas fácil y rápida de liberar una aplicación es enviándola al usuario mediante un email. Para hacer esto, primero hay que compilar la aplicación firmada como hemos visto mas arriba y luego adjuntarla y enviarla al usuario vía email.
+
+Cuando el usuario abra el email en su dispositivo Android, el mismo reconocerá la aplicación y mostrará la opcion de instalarla. El usuario puede instalar la aplicación simplemente tocando el botón instalar.
+
+El sistema Android proteje a sus usuarios de instalar aplicaciones que no son del Google Play (el cual es de confianza). El sistema bloquea tales instalaciones, al menos que el usuario opte por aceptarlas mediante la configuracion: Settings > Security. Esta configuración permite la instalación de aplicaciones de otras fuentes distintas al Google Play.
 
 ### Publicando la app en Playstore
