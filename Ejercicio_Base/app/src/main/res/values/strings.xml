@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ejercicio_Base</string>
+    <string name="home_intro_message">Ir a Detalle de personaje</string>
+    <string name="home_btn_detail">Lanzar Detalle</string>
 </resources>
