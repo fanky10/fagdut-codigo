@@ -20,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().hasExtra(CHARACTER_NAME_KEY)) {
             statusMessage = "Nombre encontrado: "+getIntent().getStringExtra(CHARACTER_NAME_KEY);
         }
+
         TextView txtCharacterName = (TextView) findViewById(R.id.txt_character_name);
         txtCharacterName.setText(statusMessage);
     }

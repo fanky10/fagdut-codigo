@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ListView;
+
+import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +15,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+        String[] charactersList = CharactersStaticRepository.getData();
+        CharactersAdapter charactersAdapter = new CharactersAdapter(this, charactersList);
+
+        listView.setAdapter(charactersAdapter);
     }
 
     @Override
@@ -31,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_action_search) {
-            goToSearch(null);
+            goToSearch();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToSearch(View v) {
+    public void goToSearch() {
         Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
