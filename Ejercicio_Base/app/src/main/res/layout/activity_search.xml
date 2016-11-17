@@ -26,6 +26,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="search"
+        android:onClick="clickSearch"
         android:text="@string/search_btn"/>
 </LinearLayout>
