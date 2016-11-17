@@ -6,15 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
-
 public class DetailActivity extends AppCompatActivity {
 
     public static final String CHARACTER_NAME_KEY = "characterNameKey";
 
     public static Intent getIntent(Context ctx, String search) {
         Intent intent = new Intent(ctx, DetailActivity.class);
-        intent.putExtra(DetailActivity.CHARACTER_NAME_PARAM, search);
+        intent.putExtra(DetailActivity.CHARACTER_NAME_KEY, search);
         return intent;
     }
 
