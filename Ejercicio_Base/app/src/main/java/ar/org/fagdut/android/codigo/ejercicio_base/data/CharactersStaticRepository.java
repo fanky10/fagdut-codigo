@@ -1,4 +1,3 @@
-/* (c) Disney. All rights reserved. */
 package ar.org.fagdut.android.codigo.ejercicio_base.data;
 
 import ar.org.fagdut.android.codigo.ejercicio_base.R;

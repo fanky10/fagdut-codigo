@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import ar.org.fagdut.android.codigo.ejercicio_base.data.CharacterModel;
 import ar.org.fagdut.android.codigo.ejercicio_base.data.CharactersStaticRepository;
 
 public class DetailActivity extends AppCompatActivity {
 
-    public static final String CHARACTER_NAME_PARAM = "characterNameParam";
+    public static final String CHARACTER_NAME_KEY = "characterNameKey";
 
     public static Intent getIntent(Context ctx, String search) {
         Intent intent = new Intent(ctx, DetailActivity.class);
@@ -27,17 +26,12 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        String nameFound = getString(R.string.character_not_found).toLowerCase();
-
-        if (getIntent().hasExtra(CHARACTER_NAME_PARAM)) {
-            String nameSearch = getIntent().getStringExtra(CHARACTER_NAME_PARAM);
-            CharacterModel characterModel = CharactersStaticRepository.findOne(nameSearch);
-            if (characterModel != null) {
-                nameFound = characterModel.getName();
-            }
+        String statusMessage = "Nombre no encontrado";
+        if (getIntent() != null && getIntent().hasExtra(CHARACTER_NAME_KEY)) {
+            statusMessage = "Nombre encontrado: "+getIntent().getStringExtra(CHARACTER_NAME_KEY);
         }
 
         TextView txtCharacterName = (TextView) findViewById(R.id.txt_character_name);
-        txtCharacterName.setText(nameFound);
+        txtCharacterName.setText(statusMessage);
     }
 }
